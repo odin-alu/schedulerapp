@@ -1,0 +1,38 @@
+<head>
+  {{>header}}
+</head>
+
+<body>
+  <div class="container">
+    <h1><u>{{title}}</u></h1>
+    {{#entries}}
+    <div>
+      <b>Coursework: </b> {{cw_title}}
+    </div>
+    <div>
+     <b>Module Name: </b> {{mod_title}}
+    </div>
+    <div>
+      <b>Model Level: </b>{{mod_level}}
+    </div>
+    <div>
+      <b>Tasks: </b>{{milestones}}
+    </div>
+    <div>
+      <b>Intended Due Date: </b>{{int_due_date}}
+    </div>
+    <div>
+      <b>Actual Due Date: </b>{{act_due_date}}
+    </div>
+    <div>
+      <b>Status: </b>{{status}}
+    </div>
+    <hr>
+    {{/entries}}
+    {{^entries}}
+    No entries yet.
+    {{/entries}}
+  </div>
+</body>
+
+</html>
