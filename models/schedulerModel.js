@@ -3,7 +3,7 @@ const nedb = require('nedb');
 class Scheduler {
     constructor(dbFilePath) {
         this.db = new nedb({
-            filename: 'gb.db',
+            filename: 'coursework.db',
             autoload: true
         });
         console.log('DB connected to ' + dbFilePath);

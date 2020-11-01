@@ -3,6 +3,7 @@ const router = express.Router();
 const controller = require('../controllers/schedulerControllers.js');
 module.exports = router;
 
+
 router.get('/', controller.landing_page);
 
 router.get('/status', controller.status);
