@@ -60,13 +60,13 @@ class Scheduler {
         })
     }
 
-    getCourseworkTitle() {
+    getStatus() {
         //return a Promise object, which can be resolved or rejected
         return new Promise((resolve, reject) => {
             //find(cw_title:'Prototyping) retrieves the data,
             //with error first callback function, err=error, entries=data
             this.db.find({
-                cw_title: 'Prototyping'
+                status: 'active'
             }, function(err, entries) {
                 //if error occurs reject Promise
                 if (err) {
@@ -75,7 +75,7 @@ class Scheduler {
                 } else {
                     resolve(entries);
                     //to see what the returned data looks like
-                    console.log('getCourseworkTitle() returns: ', entries);
+                    console.log('getStatus() returns: ', entries);
                 }
             })
         })

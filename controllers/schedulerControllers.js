@@ -29,9 +29,16 @@ exports.update = function (req, res) {
     db.getUpdate();
 }
 
-exports.cw_title = function (req, res) {
-    res.send('<h1>Processing Courseworks, see terminal</h1>');
-    db.getCourseworkTitle();
+exports.status = function (req, res) {
+    db.getStatus().then((list) => {
+        res.render('../views/ entries.mustache', {
+            'title': 'Courseworks',
+            'entries': list
+        });
+        console.log('promise resolved');
+    }).catch((err) => {
+        console.log('promise rejected', err);
+    })
 }
 
 const schedulerDAO = require('../models/schedulerModel.js');

@@ -4,18 +4,8 @@ const controller = require('../controllers/schedulerControllers.js');
 module.exports = router;
 
 router.get('/', controller.landing_page);
-// router.get('/add', controller.add);
-// router.get('/update', controller.update);
 
-// router.get('/guestbook', controller.entries_list);
-
-// router.get('/new', controller.new_entry);
-
-// router.get('/about', function(req, res) {
-//     res.redirect('../public/about.html');
-// });
-
-router.get('/courseworkTitle', controller.cw_title);
+router.get('/status', controller.status);
 router.get('/add', controller.add);
 router.get('/update', controller.update);
 
@@ -30,7 +20,3 @@ router.use(function(err, req, res, next) {
     res.type('text/plain');
     res.send('Internal Server Error.');
 })
-
-// <div>
-// Written by {{author}} , on {{published}}
-// </div>
