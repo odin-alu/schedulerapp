@@ -6,9 +6,14 @@ module.exports = router;
 
 router.get('/', controller.landing_page);
 
+// Retrieve only active course-works
 router.get('/status', controller.status);
+// Add a new course-work
 router.get('/add', controller.add);
+// Update the field of a course-work
 router.get('/update', controller.update);
+// Delete a course-work
+router.get('/delete', controller.delete);
 
 router.use(function(req, res) {
     res.status(404);

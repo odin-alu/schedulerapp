@@ -29,6 +29,11 @@ exports.update = function (req, res) {
     db.getUpdate();
 }
 
+exports.delete = function (req, res) {
+    res.send('<h1>Processing Deletion, see terminal</h1>');
+    db.delete();
+}
+
 exports.status = function (req, res) {
     db.getStatus().then((list) => {
         res.render('../views/ entries.mustache', {

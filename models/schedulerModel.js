@@ -81,6 +81,27 @@ class Scheduler {
         })
     }
 
+    delete() {
+        //return a Promise object, which can be resolved or rejected
+        return new Promise((resolve, reject) => {
+            //find(cw_title:'Prototyping) retrieves the data,
+            //with error first callback function, err=error, entries=data
+            this.db.remove({
+                cw_title: 'SafeDel'
+            }, function(err, entries) {
+                //if error occurs reject Promise
+                if (err) {
+                    reject(err);
+                    //if no error resolve the promise and return the data
+                } else {
+                    resolve(entries);
+                    //to see what the returned data looks like
+                    console.log('delete() returns: ', entries);
+                }
+            })
+        })
+    }
+
     getUpdate() {
         //return a Promise object, which can be resolved or rejected
         return new Promise((resolve, reject) => {
@@ -88,7 +109,7 @@ class Scheduler {
             //with error first callback function, err=error, entries=data
             this.db.update({
                 cw_title: 'Prototyping'
-            },{$push : {'milestones': {$each: ['task1', 'task2', 'task3']}}}, function(err, entries) {
+            },{$push : {'milestones': {$each: ['Storyboard', 'Interaction Design']}}}, function(err, entries) {
                 //if error occurs reject Promise
                 if (err) {
                     reject(err);
